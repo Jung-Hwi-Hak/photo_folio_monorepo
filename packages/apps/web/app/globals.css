@@ -1,0 +1,81 @@
+@import "tailwindcss";
+@config "../../../../tailwind.config.js";
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  list-style: none;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*button, input, textarea, select {*/
+/*  font: inherit;*/
+/*}*/
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+@layer base {
+  /* 기본 reset */
+  :root {
+    --bg-color: #ffffff; /* lightTheme.background */
+    --bg-sub-color: #F7F7F7;
+    --bg-sub-hover-color: #7575753A;
+    --text-color: #1c1c1c; /* lightTheme.text */
+    --text-point-color: #6B8E23FF;
+    --text-point-hover-color: #90ee90;
+    --flex-card-repeat: repeat(4, 1fr);
+    .bgBlur{
+      background-color: rgba(255,255,255,0.2);
+      backdrop-filter: blur(5);
+    }
+  }
+
+  /* Providers에서 <html>에 .dark를 붙여줄 때 작동 */
+  .dark {
+    /*--bg-color: #1c1c1c; !* darkTheme.background *!*/
+    --bg-color: #1c1c1c; /* darkTheme.background */
+    --bg-sub-color: #333333;
+    --bg-sub-hover-color: #818181;
+    --text-color: #ffffff; /* darkTheme.text */
+    --text-point-color: #90ee90;
+    --text-point-hover-color: #6B8E23FF;
+    .bgBlur{
+      background-color: rgba(28,28,28,0.2);
+      backdrop-filter: blur(5px);
+    }
+  }
+
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s; /* 부드러운 전환 효과 */
+  }
+
+
+
+
+  @media (max-width: 1200px) {
+    :root {
+      --flex-card-repeat: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 959px) {
+    :root {
+      --flex-card-repeat: repeat(1, 1fr);
+    }
+  }
+}

@@ -8,11 +8,8 @@
     "start": "next start"
   },
   "dependencies": {
-    "next": "16",
-    "react": "^19.2.1",
-    "react-dom": "^19.2.1"
-  },
-  "devDependencies": {
-    "typescript": "^5.9.3"
+    "@repo/common-ui": "workspace:*",
+    "@repo/common-utils": "workspace:*",
+    "@repo/config": "workspace:*"
   }
 }
