@@ -3,12 +3,19 @@ import StyledComponentsRegistry from '@/config/styledComponentRegistry';
 import { ThemeProvider } from 'styled-components';
 import { darkTheme } from '@theme/theme';
 import { motion, AnimatePresence } from 'framer-motion';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useModeStore } from '@/apps/web/store/store';
 import HeaderComponent from '@/apps/web/components/common/header/Header.component';
 
 export default function Providers({ children }: { children: React.ReactNode }) {
   const { darkMode } = useModeStore();
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }, []);
+
   return (
     <StyledComponentsRegistry>
       <ThemeProvider theme={darkTheme}>
