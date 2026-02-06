@@ -23,8 +23,13 @@ module.exports = {
         subBg: "var(--bg-sub-color)",
         subHoverBg: "var(--bg-sub-hover-color)",
       },
-      gridTemplateColumns: {
-        card1to4: "var(--flex-card-repeat)",
+      // gridTemplateColumns: {
+      //   card1to4: "var(--flex-card-repeat)",
+      // },
+      screens: {
+        screen1280: "1280px",
+        screen960: "960px",
+        screenMob: "430px",
       },
     },
   },

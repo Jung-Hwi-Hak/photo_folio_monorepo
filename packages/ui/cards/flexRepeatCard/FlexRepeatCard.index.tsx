@@ -10,7 +10,7 @@ interface FlexRepeatCardType {
 
 export default function FlexRepeatCard(props: FlexRepeatCardType) {
   return (
-    <div className="relative" onClick={() => props.clickFnc({ id: props.id })}>
+    <div className="relative h-[30vh] max-screen1280:h-[50vh] max-screen960:h-[70vh] max-screenMob:h-[30vh]">
       <div className="flex items-center text-mainText border-t border-gray1 h-15">
         <span className="text-pointText  font-bold">{props.id}</span>
         <span className="text-mainText ml-5 font-bold">{props.title}</span>

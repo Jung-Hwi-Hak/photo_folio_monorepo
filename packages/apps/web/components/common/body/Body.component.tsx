@@ -24,7 +24,7 @@ export default function BodyComponent() {
   };
   return (
     <motion.div
-      className="grid grid-cols-card1to4 gap-15"
+      className="grid grid-cols-4 max-screen1280:grid-cols-2 max-screen960:grid-cols-1 gap-15"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
