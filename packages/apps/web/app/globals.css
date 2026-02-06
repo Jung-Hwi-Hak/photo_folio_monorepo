@@ -67,15 +67,15 @@ a {
 
 
 
-  @media (max-width: 1200px) {
-    :root {
-      --flex-card-repeat: repeat(2, 1fr);
-    }
-  }
+  /*@media (max-width: 1024px) {*/
+  /*  :root {*/
+  /*    --flex-card-repeat: repeat(2, 1fr);*/
+  /*  }*/
+  /*}*/
 
-  @media (max-width: 959px) {
-    :root {
-      --flex-card-repeat: repeat(1, 1fr);
-    }
-  }
+  /*@media (max-width: 768px) {*/
+  /*  :root {*/
+  /*    --flex-card-repeat: repeat(1, 1fr);*/
+  /*  }*/
+  /*}*/
 }
