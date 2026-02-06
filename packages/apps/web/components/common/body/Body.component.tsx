@@ -28,7 +28,10 @@ export default function BodyComponent() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.5 }}
+      transition={{
+        duration: 0.5,
+        layout: { duration: 0.5, type: 'spring', stiffness: 200, damping: 25 },
+      }}
     >
       <>
         {portfolioData.map((item) => (
