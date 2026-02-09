@@ -9,6 +9,10 @@ export default function PhotoFolioPage() {
   const { handleBack, photoFolioData } = usePhotoFolioHooks();
   const params = useParams();
 
+  // 1. 여기서 딱 한 번만 타입을 확실히 정해줍니다.
+  const id = params?.id as string;
+  // 2. 이제 'id' 변수는 확실히 string이므로 어디서든 자유롭게 사용 가능합니다.
+  const currentItem = photoFolioData[id];
   return (
     <div className="bg-subBg h-[50vh]">
       <GiCancel onClick={handleBack} className="cursor-pointer absolute right-0" />
@@ -16,14 +20,16 @@ export default function PhotoFolioPage() {
       <div className="h-full flex flex-row">
         {/* 포토폴리오 이미지 wrap */}
         <div className="relative flex-1 p-5">
-          {params.id ? (
+          {currentItem ? (
             <Image
-              src={`/img/${photoFolioData[params.id].imgSrc}`}
-              alt="포토폴리오"
+              src={`/img/${currentItem.imgSrc}`}
+              alt={currentItem.title}
               fill
-              className="p-5"
+              className="object-contain"
             />
-          ) : null}
+          ) : (
+            <div>데이터가 없습니다.</div>
+          )}
         </div>
         {/* 포토폴리오 info wrap */}
         <div className="flex-1 p-5">
