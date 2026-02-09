@@ -16,12 +16,14 @@ export default function PhotoFolioPage() {
       <div className="h-full flex flex-row">
         {/* 포토폴리오 이미지 wrap */}
         <div className="relative flex-1 p-5">
-          <Image
-            src={`/img/${photoFolioData[params?.id].imgSrc}`}
-            alt="포토폴리오"
-            fill
-            className="p-5"
-          />
+          {params.id ? (
+            <Image
+              src={`/img/${photoFolioData[params.id].imgSrc}`}
+              alt="포토폴리오"
+              fill
+              className="p-5"
+            />
+          ) : null}
         </div>
         {/* 포토폴리오 info wrap */}
         <div className="flex-1 p-5">
