@@ -17,7 +17,7 @@ export default function FlexRepeatCard(props: FlexRepeatCardType) {
       </div>
       <motion.div
         className="flex rounded justify-center items-end cursor-pointer bg-subBg h-full"
-        onClick={() => props.clickFnc({ id: props.id })}
+        onClick={() => (props.clickFnc ? props.clickFnc({ id: props.id }) : {})}
         whileHover={{
           scale: 1.05,
           backgroundColor: "var(--bg-sub-hover-color)", // 색상 변경도 부드럽게 하고 싶을 때
