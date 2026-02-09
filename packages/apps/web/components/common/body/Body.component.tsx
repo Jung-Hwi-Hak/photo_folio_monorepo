@@ -2,6 +2,7 @@
 import FlexRepeatCard from '@/ui/cards/flexRepeatCard/FlexRepeatCard.index';
 import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 type PortfolioDataType = {
   id: number;
@@ -36,13 +37,15 @@ export default function BodyComponent() {
       <>
         {portfolioData.map((item) => (
           // UI 공통 컴포넌트 카드
-          <FlexRepeatCard
-            key={item.id}
-            title={item.title}
-            id={item.id}
-            imgSrc={item.imgSrc}
-            clickFnc={() => handleClick({ id: item.id })}
-          />
+          <Link href={`/photoFolio/${item.id}`} key={item.id}>
+            <FlexRepeatCard
+              key={item.id}
+              title={item.title}
+              id={item.id}
+              imgSrc={item.imgSrc}
+              // clickFnc={() => handleClick({ id: item.id })}
+            />
+          </Link>
         ))}
       </>
     </motion.div>
