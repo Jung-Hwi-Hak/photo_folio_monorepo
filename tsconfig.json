@@ -30,7 +30,6 @@
   "include": [
     "packages",
     "next-env.d.ts",
-//    "styled.d.ts",
     "../../packages/config/**/*.d.ts",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
